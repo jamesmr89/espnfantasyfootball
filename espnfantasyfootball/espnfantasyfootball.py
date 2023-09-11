@@ -149,10 +149,11 @@ class FantasyLeague:
             team_primary_owner.append(team_json['teams'][team]['primaryOwner'])
             team_location.append(team_json['teams'][team]['location'])
             team_nickname.append(team_json['teams'][team]['nickname'])
+            
             # Find the owner's first and last name based on the primaryOwner ID
             owner_id = team_json['teams'][team]['primaryOwner']
             owner_info = next((member for member in team_json['members'] if member['id'] == owner_id), None)
-
+        
             if owner_info:
                 owner_first_name.append(owner_info['firstName'])
                 owner_last_name.append(owner_info['lastName'])
